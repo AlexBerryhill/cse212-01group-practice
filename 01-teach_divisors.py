@@ -14,13 +14,18 @@ def find_divisors_1(number):
     and excluding the number itself.  Modulo will be used
     to test divisibility.
     """
-    pass
+    divisors=[]
+    for i in range(1,number):
+        if number % i == 0:
+            divisors.append(i)
+    return divisors
 
 def find_divisors_2(number):
     """
     Same as find_divisors_1 but a list comprehension is used.
     """
-    pass
+    divisors = [n for n in range(1, number) if number % n == 0]
+    return divisors
 
 print(find_divisors_1(80)) # [1, 2, 4, 5, 8, 10, 16, 20, 40]
 print(find_divisors_2(80)) # [1, 2, 4, 5, 8, 10, 16, 20, 40]

@@ -8,6 +8,9 @@ to post it online.  Storage into a personal and private repository (e.g. private
 GitHub repository, unshared Google Drive folder) is acceptable.
 """
 
+from logging import raiseExceptions
+
+
 def list_selector(list1, list2, selector):
     """
     The list1 and list2 inputs will be combined into a single
@@ -20,7 +23,19 @@ def list_selector(list1, list2, selector):
     that the sizes of list1 and list2 agree with the selector 
     list.
     """
-    pass
+    n1=0
+    n2=0
+    list=[]
+    for i in selector:
+        if i == 1:
+            list.append(list1[n1])
+            n1+=1
+        elif i == 2:
+            list.append(list2[n2])
+            n2+=1
+        else:
+            raise
+    return list
 
 l1 = [1, 2, 3, 4, 5]
 l2 = [2, 4, 6, 8, 10]
